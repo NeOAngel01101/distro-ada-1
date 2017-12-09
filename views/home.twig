@@ -22,7 +22,7 @@
         <tbody>
         {% for distro in distros %}
         <tr>
-            <td><a href="distros/{{ distro.id }}"><img src="{{ distro.image }}" alt="Logo de {{ distro.name }}"></a></td>
+            <td><a href="distros/{{ distro.id }}"><img src="{{ distro.image }}" alt="Logo de {{ distro.name }}" class="logo"></a></td>
             <td><a href="distros/{{ distro.id }}">{{ distro.name }}</a></td>
             <td>{{ distro.basedon }}</td>
             <td>{{ distro.version }}</td>

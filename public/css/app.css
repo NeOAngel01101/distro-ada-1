@@ -3,6 +3,11 @@ body{
     background-color: #EAEDED;
 }
 
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
 .editar {
     color: #FABADA;
 }
