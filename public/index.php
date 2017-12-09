@@ -6,12 +6,13 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 // Punto de entrada a la aplicación
 require_once '../helpers.php';
-
 session_start();
 
 $baseDir = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-$baseUrl = $protocol . $_SERVER['HTTP_HOST'] . $baseDir;
+
+$baseUrl = $_SERVER['HTTP_HOST'] . $baseDir;
+$protocol = (strpos($baseUrl, 'heroku')) ? "https://" : "http://";
+$baseUrl = $protocol.$baseUrl;
 define('BASE_URL', $baseUrl);
 
 if(file_exists(__DIR__.'/../.env')){
