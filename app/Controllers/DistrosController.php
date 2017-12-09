@@ -13,10 +13,7 @@ class DistrosController extends BaseController {
      * @return string Render de la web con toda la información.
      */
     public function getNew(){
-        global $osTypeValues, $basedOnValues, $desktopValues, $originValues, $archValues, $categoryValues, $statusValues;
-
         $errors = array();  // Array donde se guardaran los errores de validación
-        $error = false;     // Será true si hay errores de validación.
 
         $webInfo = [
             'h1'        => 'Añadir Distro',
@@ -28,13 +25,6 @@ class DistrosController extends BaseController {
         $distro = array_fill_keys(["name","image", "ostype", "basedon", "origin", "arch", "desktop", "category", "status", "version", "web", "forums", "doc", "errorTracker", "description"], "");
 
         return $this->render('formDistros.twig', [
-            'osTypeValues'  => $osTypeValues,
-            'basedOnValues' => $basedOnValues,
-            'desktopValues' => $desktopValues,
-            'originValues'  => $originValues,
-            'archValues'    => $archValues,
-            'categoryValues'=> $categoryValues,
-            'statusValues'  => $statusValues,
             'distro'        => $distro,
             'errors'        => $errors,
             'webInfo'       => $webInfo
@@ -47,8 +37,6 @@ class DistrosController extends BaseController {
      * @return string Render de la web con toda la información.
      */
     public function postNew(){
-        global $osTypeValues, $basedOnValues, $desktopValues, $originValues, $archValues, $categoryValues, $statusValues;
-
         $webInfo = [
             'h1'        => 'Añadir Distro',
             'submit'    => 'Añadir',
@@ -116,13 +104,6 @@ class DistrosController extends BaseController {
         }
 
         return $this->render('formDistros.twig', [
-            'osTypeValues'  => $osTypeValues,
-            'basedOnValues' => $basedOnValues,
-            'desktopValues' => $desktopValues,
-            'originValues'  => $originValues,
-            'archValues'    => $archValues,
-            'categoryValues'=> $categoryValues,
-            'statusValues'  => $statusValues,
             'distro'        => $distro,
             'errors'        => $errors,
             'webInfo'       => $webInfo
@@ -137,8 +118,6 @@ class DistrosController extends BaseController {
      * @return string Render de la web con toda la información.
      */
     public function getEdit($id){
-        global $osTypeValues, $basedOnValues, $desktopValues, $originValues, $archValues, $categoryValues, $statusValues;
-
         $errors = array();  // Array donde se guardaran los errores de validación
 
         $webInfo = [
@@ -155,13 +134,6 @@ class DistrosController extends BaseController {
         }
 
         return $this->render('formDistros.twig',[
-            'osTypeValues'  => $osTypeValues,
-            'basedOnValues' => $basedOnValues,
-            'desktopValues' => $desktopValues,
-            'originValues'  => $originValues,
-            'archValues'    => $archValues,
-            'categoryValues'=> $categoryValues,
-            'statusValues'  => $statusValues,
             'distro'        => $distro,
             'errors'        => $errors,
             'webInfo'       => $webInfo
@@ -177,8 +149,6 @@ class DistrosController extends BaseController {
      * @return string Render de la web con toda la información.
      */
     public function putEdit($id){
-        global $osTypeValues, $basedOnValues, $desktopValues, $originValues, $archValues, $categoryValues, $statusValues;
-
         $errors = array();  // Array donde se guardaran los errores de validación
 
         $webInfo = [
@@ -248,13 +218,6 @@ class DistrosController extends BaseController {
             }
         }
         return $this->render('formDistros.twig', [
-            'osTypeValues'  => $osTypeValues,
-            'basedOnValues' => $basedOnValues,
-            'desktopValues' => $desktopValues,
-            'originValues'  => $originValues,
-            'archValues'    => $archValues,
-            'categoryValues'=> $categoryValues,
-            'statusValues'  => $statusValues,
             'distro'        => $distro,
             'errors'        => $errors,
             'webInfo'       => $webInfo
