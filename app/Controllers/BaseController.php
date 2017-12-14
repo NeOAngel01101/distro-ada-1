@@ -15,6 +15,7 @@ class BaseController {
         ]);
 
         $this->templateEngine->addGlobal('session', $_SESSION);
+        $this->templateEngine->addGlobal('cookie', $_COOKIE);
 
         // Extender Twig
         // Filtros: toman una cadena y la modifican

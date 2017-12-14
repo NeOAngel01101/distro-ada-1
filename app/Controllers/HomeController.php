@@ -23,6 +23,8 @@ class HomeController extends BaseController {
     public function postIndex(){
         $distrosController = new DistrosController();
 
+        setcookie('lastSearch', $_POST['q'], time() + 60);
+
         $distros = $distrosController->search($_POST['q']);
 
         $webInfo = [
@@ -30,7 +32,7 @@ class HomeController extends BaseController {
             'h1' => 'Resultados de la búsqueda'
         ];
 
-        return $this->render('home.twig', [
+        return $this->render('search.twig', [
             'distros' => $distros,
             'webInfo' => $webInfo
         ]);

@@ -238,17 +238,24 @@ class DistrosController extends BaseController {
      */
     public function getIndex($id = null){
         if( is_null($id) ){
+            $results = [];
+
             $webInfo = [
                 'title' => 'Página de Inicio - DistroADA',
                 'h1' => 'Novedades'
             ];
 
+            if( isset($_COOKIE['lastSearch'])){
+                $results = $this->search($_COOKIE['lastSearch']);
+            }
+
             $distros = Distro::query()->orderBy('id','desc')->get();
-            //$distros = Distro::all();
+
 
             return $this->render('home.twig', [
                 'distros' => $distros,
-                'webInfo' => $webInfo
+                'webInfo' => $webInfo,
+                'results' => $results
             ]);
 
         }else{
