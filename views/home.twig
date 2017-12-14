@@ -71,7 +71,7 @@
                 <form action="/distros" method="POST" id="deleteDistro-{{ distro.id }}">
                     <input type="hidden" name="id" value="{{ distro.id }}">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" id="deleteForm" class="btn btn-link btn-alert" onclick="deleteDistro({{ distro.id }})"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                    <button type="submit" id="deleteForm" class="btn btn-link btn-alert" onclick="deleteDistro({{ distro.id }}, event)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                 </form>
             </td>
         </tr>

@@ -1,5 +1,6 @@
-function deleteDistro(id) {
-    event.preventDefault(); // prevent el submit del formulario
+function deleteDistro(id, event) {
+    //console.log(event)
+    event.preventDefault() // prevent el submit del formulario
     var form = document.getElementById('deleteDistro-'+id)
     swal({
         title: '¿Estás seguro?',
