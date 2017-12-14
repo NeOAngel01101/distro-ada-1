@@ -239,7 +239,8 @@ class DistrosController extends BaseController {
     public function getIndex($id = null){
         if( is_null($id) ){
             $webInfo = [
-                'title' => 'Página de Inicio - DistroADA'
+                'title' => 'Página de Inicio - DistroADA',
+                'h1' => 'Novedades'
             ];
 
             $distros = Distro::query()->orderBy('id','desc')->get();
@@ -330,5 +331,11 @@ class DistrosController extends BaseController {
         $distro = Distro::destroy($id);
 
         header("Location: ". BASE_URL);
+    }
+
+    public function search($q){
+        return Distro::where('name', 'LIKE', '%'.$q.'%')
+            ->orWhere('basedon', 'LIKE', '%'.$q.'%')
+            ->get();
     }
 }

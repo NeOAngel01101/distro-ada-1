@@ -6,7 +6,8 @@
 
 {% block content %}
 <div class="container">
-    <h1>Most Popular Distros</h1>
+    <h1>{{ webInfo.h1 }}</h1>
+    {% if distros.count %}
     <table class="table table-striped">
         <thead>
         <tr>
@@ -44,6 +45,9 @@
 
         </tbody>
     </table>
+    {% else %}
+        <h2>No hay resultados. Busca por otros criterios, porfiplis!!!</h2>
+    {% endif %}
 </div><!-- /.container -->
 {% endblock %}
 
