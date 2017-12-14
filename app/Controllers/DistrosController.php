@@ -258,7 +258,6 @@ class DistrosController extends BaseController {
             ];
 
             $distro = Distro::find($id);
-            $comments = Comment::where('distro_id', $id)->orderBy('created_at','DESC')->get();
 
             if( !$distro ){
                 return $this->render('404.twig', ['webInfo' => $webInfo]);
@@ -268,7 +267,6 @@ class DistrosController extends BaseController {
             return $this->render('distro/distro.twig', [
                 'distro'    => $distro,
                 'webInfo'   => $webInfo,
-                'comments'  => $comments
             ]);
         }
 

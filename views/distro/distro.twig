@@ -115,7 +115,7 @@
             </div>
             <div class="row data">
                 <div class="col-lg-12">
-                    <form class="form-comment" method="POST" action="">
+                    <form class="form-comment" method="POST">
                         <h2 class="form-comment-heading">Deja tu Comentario</h2>
                         <div class="row">
                             <div class="col-lg-6">
@@ -146,10 +146,10 @@
         </div>
         <div class="col-lg-4">
             <h2>Opiniones de los usuarios</h2>
-            {% if comments|length == 0 %}
+            {% if distro.comments|length == 0 %}
                 <h4>Todavía no hay comentarios</h4>
             {% else %}
-                {% for comment in comments %}
+                {% for comment in distro.comments %}
                     <h4>Según {{ comment.user }}:</h4>
                     <p>{{ comment.text }}</p>
                 {% endfor %}

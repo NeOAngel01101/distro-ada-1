@@ -9,6 +9,6 @@ class Distro extends Model {
     protected $fillable = ['image', 'name', 'ostype', 'basedon', 'origin', 'architecture', 'desktop', 'category', 'status', 'version', 'web', 'doc', 'forums', 'error_tracker', 'description'];
 
     public function comments(){
-        return $this->hasMany('\App\Models\Comment')->orderBy('created_at', 'asc');
+        return $this->hasMany(\App\Models\Comment::class)->orderBy('created_at', 'asc');
     }
 }
